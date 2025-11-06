@@ -31,16 +31,16 @@
         return 1;
     }
     
-    cout << "[Process 2] Waiting for counter > 100..." << endl;
-    while (data->counter <= 100) {
+    cout << "[Process 2] Waiting for counter > 500..." << endl;
+    while (data->counter <= 500) {
         usleep(100000);
     }
     
-    cout << "[Process 2] Counter > 100 reached. Multiple = " << data->multiple << endl;
+    cout << "[Process 2] Counter > 500 reached. Multiple = " << data->multiple << endl;
     
-    for (int i = 1; i <= 10; ++i) {
-    cout << "[Process 2] " << data->multiple << " x " << i << " = " << (data->multiple * i) << endl;
-    sleep(1);
+    while(data->counter <= 500){
+        cout << "Process 2" << data->multiple << "x" << data->counter << "=" << (data->counter * data->multiple) << endl;
+        usleep(250000);
     }
     
     shmdt((void*)data);

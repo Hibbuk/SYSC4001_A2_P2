@@ -53,10 +53,15 @@ int main() {
     } 
     else {
         //Parent Process and increment counter
-        while(data->counter <= 200){
+        while(data->counter <= 500){
             data->counter++;
             cout << "Process 1 counter" << data->counter << endl;
             usleep(100000) //.1 delay
+
+            if(data->counter > 500){
+                cout << "Process 1 counter > 500 Stopping" << endl;
+                break;
+            }
         }
         //wait for child to finsh
         wait(NULL);
