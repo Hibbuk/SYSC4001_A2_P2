@@ -11,8 +11,8 @@ using namespace std;
 
 int main() {
     
-    key_t key = ftok("shared.h", 65); //file name and the PID
-    if (key = -1)
+    key_t key = ftok("Part4/shared.h", 65); //file name and the PID
+    if (key == -1)
     {
         perror(" error ftok");
         return 1;
@@ -56,7 +56,7 @@ int main() {
         while(data->counter <= 500){
             data->counter++;
             cout << "Process 1 counter" << data->counter << endl;
-            usleep(100000) //.1 delay
+            usleep(100000); //.1 delay
 
             if(data->counter > 500){
                 cout << "Process 1 counter > 500 Stopping" << endl;
@@ -69,7 +69,7 @@ int main() {
         shmdt((void*) data);
         shmctl(shmid, IPC_RMID, nullptr); 
 
-        count << "Process 1 done and the shared memory is removed" << endl;
+        cout << "Process 1 done and the shared memory is removed" << endl;
     }
     return 0;
 }

@@ -11,7 +11,7 @@
     cout << "[Process 2] Started and connecting to shared memory..." << endl;
     
     // Use same key as process 1
-    key_t key = ftok("shared.h", 65);
+    key_t key = ftok("Part4/shared.h", 65);
     if (key == -1) {
         perror("ftok");
         return 1;
@@ -31,12 +31,12 @@
         return 1;
     }
     
-    cout << "[Process 2] Waiting for counter > 500..." << endl;
-    while (data->counter <= 500) {
+    cout << "[Process 2] Waiting for counter > 100..." << endl;
+    while (data->counter <= 100) {
         usleep(100000);
     }
     
-    cout << "[Process 2] Counter > 500 reached. Multiple = " << data->multiple << endl;
+    cout << "[Process 2] Counter > 100 reached. Multiple = " << data->multiple << endl;
     
     while(data->counter <= 500){
         cout << "Process 2" << data->multiple << "x" << data->counter << "=" << (data->counter * data->multiple) << endl;
