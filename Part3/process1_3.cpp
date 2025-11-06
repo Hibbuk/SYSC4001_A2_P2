@@ -15,7 +15,7 @@ int main() {
     }
     else if (pid == 0) {
         //Child Process 
-        execl("./Part3/process2", "process2", NULL);
+        execl("./Part3/process2_3", "process2_3", NULL);
         perror("exec failed");
         exit(1);
     } 
