@@ -1,9 +1,9 @@
 //part 2
 
-#include <iostream>;
-#include <unistd.h>;
-
-int (main){
+#include <iostream>
+#include <unistd.h>
+using namespace std;
+int main(){
     int counter = 0;
     int cycle = 0;
 

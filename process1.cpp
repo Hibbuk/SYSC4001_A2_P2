@@ -1,9 +1,10 @@
 //apart of part 2
 
-#include <iostream>;
-#include <unistd.h>;
-#include <sys/types.h>;
-#include <cstdlib>;
+#include <iostream>
+#include <unistd.h>
+#include <sys/types.h>
+#include <cstdlib>
+using namespace std;
 
 int main(){
     pid_t pid = fork();
@@ -13,7 +14,7 @@ int main(){
         return 1;
     }
     else if (pid == 0){
-        exec1("./process2", "process2", NULL);
+        execl("./process2", "process2", NULL);
 
         perror("exec failed");
         exit(1);
@@ -32,7 +33,7 @@ int main(){
 
             counter++;
             cycle++;
-            usleep(300000)
+            usleep(300000);
 
         }
     }
