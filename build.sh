@@ -21,9 +21,15 @@ set -e
 #g++ -o Part3/process2_3 Part3/process2_3.cpp
 
 # Part 4
-echo " Building Part 4..."
-g++ -o Part4/process1_4 Part4/process1_4.cpp
-g++ -o Part4/process2_4 Part4/process2_4.cpp
+#echo " Building Part 4..."
+#g++ -o Part4/process1_4 Part4/process1_4.cpp
+#g++ -o Part4/process2_4 Part4/process2_4.cpp
+
+#Part 5
+#!/bin/bash
+echo "Building Part 5..."
+g++ Part5/process1_5.cpp -o Part5/process1_5
+g++ Part5/process2_5.cpp -o Part5/process2_5
 
 echo ""
 echo "Build Complete!"
